@@ -3,6 +3,7 @@ logs/
 model_run_time/
 order_records/
 temp/
+artifacts/*.tar.zst
 *.log
 *.db
 *.sqlite
@@ -23,4 +24,3 @@ venv/
 ._*
 .vscode/
 .idea/
-

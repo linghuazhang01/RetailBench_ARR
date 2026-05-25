@@ -13,6 +13,11 @@ the main tables and diagnostic figures.
 - `script/run_batch_experiments.py`: batch launcher for LLM-agent experiments.
 - `paper_submit_data/`: paper-facing metric extraction, diagnostic analysis,
   generated CSV/JSON summaries, and figure inputs.
+- `artifacts/environment_data.tar.zst.part-*`: processed environment data
+  required by the simulator, stored as split archive chunks.
+- `artifacts/raw_trajectories_no_checkpoints.tar.zst.part-*`: raw rollout
+  trajectories used by the paper analyses, stored as split archive chunks and
+  excluding periodic checkpoint snapshots.
 - `configs/paper_main_hard_v2.json`: fixed evaluation configuration summary
   used for the main paper setting.
 - `docs/data_access.md`: third-party data access and reconstruction notes.
@@ -28,17 +33,30 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Restore the environment data and raw trajectories:
+
+```bash
+./script/prepare_reproducibility_data.sh
+```
+
 Regenerate stage-organized paper-facing figures from the included metrics:
 
 ```bash
 python3 paper_submit_data/render_four_stage_report.py
 ```
 
-The full LLM rollout logs and third-party raw data are not redistributed in this
-anonymous review artifact. The included outputs are sufficient to inspect the
-paper-facing tables and diagnostic figures. Full regeneration with
-`paper_submit_data/analyze_metrics.py` requires raw run directories; see
-`docs/data_access.md` for data reconstruction notes.
+Regenerate the paper-facing metric tables from the restored raw run directories:
+
+```bash
+python3 paper_submit_data/analyze_metrics.py \
+  --manifest paper_submit_data/manifest.json \
+  --output-dir paper_submit_data/outputs
+```
+
+The large files are stored as compressed split archives to avoid depending on
+Git LFS. Periodic checkpoint snapshots are omitted; final run databases,
+configs, logs, token usage files, `tool_calls.jsonl`, and `run_*.json`
+trajectories are retained.
 
 ## Double-Blind Review Note
 

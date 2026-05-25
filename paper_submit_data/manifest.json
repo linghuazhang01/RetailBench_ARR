@@ -9,9 +9,13 @@
     "environment": "hard_v2",
     "models": 7,
     "non_llm_baselines": 1,
-    "frameworks": ["react", "reflection", "plan_and_act"],
+    "frameworks": [
+      "react",
+      "reflection",
+      "plan_and_act"
+    ],
     "main_rule": "Use the completed or latest usable rollout for each listed model/framework pair. Six models have three framework runs; GPT-5.5 has one react run. The non-LLM heuristic baseline uses the latest dated hard_v2 180-day run available in temp/. Best-run selection is survival-first: maximize run_days, then final_networth, then total_sales.",
-    "storage_rule": "raw_runs contains symlinks to original logs because the raw logs are large and live on <EXTERNAL_DATA_VOLUME> or temp/."
+    "storage_rule": "raw_runs is redistributed through artifacts/raw_trajectories_no_checkpoints.tar.zst. Run script/prepare_reproducibility_data.sh after cloning to restore paper_submit_data/raw_runs with relative paths. Periodic checkpoint snapshots are omitted; final run databases, configs, logs, token usage files, tool_calls.jsonl, and run_*.json trajectories are retained."
   },
   "runs": [
     {
@@ -19,133 +23,133 @@
       "model_slug": "minimax_m25",
       "framework": "react",
       "run_id": "run_react_MiniMax-M2.5_caec_off_fcr_off_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_react_MiniMax-M2.5_caec_off_fcr_off/run_react_MiniMax-M2.5_caec_off_fcr_off_run1"
+      "source_path": "paper_submit_data/raw_runs/minimax_m25/react/run1"
     },
     {
       "model": "MiniMax-M2.5",
       "model_slug": "minimax_m25",
       "framework": "reflection",
       "run_id": "run_reflection_MiniMax-M2.5_caec_off_fcr_off_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_reflection_MiniMax-M2.5_caec_off_fcr_off/run_reflection_MiniMax-M2.5_caec_off_fcr_off_run1"
+      "source_path": "paper_submit_data/raw_runs/minimax_m25/reflection/run1"
     },
     {
       "model": "MiniMax-M2.5",
       "model_slug": "minimax_m25",
       "framework": "plan_and_act",
       "run_id": "run_plan_and_act_MiniMax-M2.5_caec_off_fcr_off_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_plan_and_act_MiniMax-M2.5_caec_off_fcr_off/run_plan_and_act_MiniMax-M2.5_caec_off_fcr_off_run1"
+      "source_path": "paper_submit_data/raw_runs/minimax_m25/plan_and_act/run1"
     },
     {
       "model": "DeepSeek-V4-Pro",
       "model_slug": "deepseek_v4_pro",
       "framework": "react",
       "run_id": "run_react_deepseek-v4-pro_caec_off_fcr_off_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_react_deepseek-v4-pro_caec_off_fcr_off/run_react_deepseek-v4-pro_caec_off_fcr_off_run1"
+      "source_path": "paper_submit_data/raw_runs/deepseek_v4_pro/react/run1"
     },
     {
       "model": "DeepSeek-V4-Pro",
       "model_slug": "deepseek_v4_pro",
       "framework": "reflection",
       "run_id": "run_reflection_deepseek-v4-pro_caec_off_fcr_off_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_reflection_deepseek-v4-pro_caec_off_fcr_off/run_reflection_deepseek-v4-pro_caec_off_fcr_off_run1"
+      "source_path": "paper_submit_data/raw_runs/deepseek_v4_pro/reflection/run1"
     },
     {
       "model": "DeepSeek-V4-Pro",
       "model_slug": "deepseek_v4_pro",
       "framework": "plan_and_act",
       "run_id": "run_plan_and_act_deepseek-v4-pro_caec_off_fcr_off_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_plan_and_act_deepseek-v4-pro_caec_off_fcr_off/run_plan_and_act_deepseek-v4-pro_caec_off_fcr_off_run1"
+      "source_path": "paper_submit_data/raw_runs/deepseek_v4_pro/plan_and_act/run1"
     },
     {
       "model": "GLM-5.1",
       "model_slug": "glm_51",
       "framework": "react",
       "run_id": "run_react_glm-5.1_caec_off_fcr_off_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_react_glm-5.1_caec_off_fcr_off/run_react_glm-5.1_caec_off_fcr_off_run1"
+      "source_path": "paper_submit_data/raw_runs/glm_51/react/run1"
     },
     {
       "model": "GLM-5.1",
       "model_slug": "glm_51",
       "framework": "reflection",
       "run_id": "run_reflection_glm-5.1_caec_off_fcr_off_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_reflection_glm-5.1_caec_off_fcr_off/run_reflection_glm-5.1_caec_off_fcr_off_run1"
+      "source_path": "paper_submit_data/raw_runs/glm_51/reflection/run1"
     },
     {
       "model": "GLM-5.1",
       "model_slug": "glm_51",
       "framework": "plan_and_act",
       "run_id": "run_plan_and_act_glm-5.1_caec_off_fcr_off_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_plan_and_act_glm-5.1_caec_off_fcr_off/run_plan_and_act_glm-5.1_caec_off_fcr_off_run1"
+      "source_path": "paper_submit_data/raw_runs/glm_51/plan_and_act/run1"
     },
     {
       "model": "Kimi-K2.6",
       "model_slug": "kimi_k26",
       "framework": "react",
       "run_id": "run_react_kimi-k2.6_caec_off_fcr_off_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_react_kimi-k2.6_caec_off_fcr_off/run_react_kimi-k2.6_caec_off_fcr_off_run1"
+      "source_path": "paper_submit_data/raw_runs/kimi_k26/react/run1"
     },
     {
       "model": "Kimi-K2.6",
       "model_slug": "kimi_k26",
       "framework": "reflection",
       "run_id": "run_reflection_kimi-k2.6_caec_off_fcr_off_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_reflection_kimi-k2.6_caec_off_fcr_off/run_reflection_kimi-k2.6_caec_off_fcr_off_run1"
+      "source_path": "paper_submit_data/raw_runs/kimi_k26/reflection/run1"
     },
     {
       "model": "Kimi-K2.6",
       "model_slug": "kimi_k26",
       "framework": "plan_and_act",
       "run_id": "run_plan_and_act_kimi-k2.6_caec_off_fcr_off_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_plan_and_act_kimi-k2.6_caec_off_fcr_off/run_plan_and_act_kimi-k2.6_caec_off_fcr_off_run1"
+      "source_path": "paper_submit_data/raw_runs/kimi_k26/plan_and_act/run1"
     },
     {
       "model": "Qwen3.5-397B-A17B",
       "model_slug": "qwen35_397b_a17b",
       "framework": "react",
       "run_id": "run_react_qwen3.5-397b-a17b_caec_off_fcr_off_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_react_qwen3.5-397b-a17b_caec_off_fcr_off/run_react_qwen3.5-397b-a17b_caec_off_fcr_off_run1"
+      "source_path": "paper_submit_data/raw_runs/qwen35_397b_a17b/react/run1"
     },
     {
       "model": "Qwen3.5-397B-A17B",
       "model_slug": "qwen35_397b_a17b",
       "framework": "reflection",
       "run_id": "run_reflection_qwen3.5-397b-a17b_caec_off_fcr_off_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_reflection_qwen3.5-397b-a17b_caec_off_fcr_off/run_reflection_qwen3.5-397b-a17b_caec_off_fcr_off_run1"
+      "source_path": "paper_submit_data/raw_runs/qwen35_397b_a17b/reflection/run1"
     },
     {
       "model": "Qwen3.5-397B-A17B",
       "model_slug": "qwen35_397b_a17b",
       "framework": "plan_and_act",
       "run_id": "run_plan_and_act_qwen3.5-397b-a17b_caec_off_fcr_off_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_plan_and_act_qwen3.5-397b-a17b_caec_off_fcr_off/run_plan_and_act_qwen3.5-397b-a17b_caec_off_fcr_off_run1"
+      "source_path": "paper_submit_data/raw_runs/qwen35_397b_a17b/plan_and_act/run1"
     },
     {
       "model": "Grok-4.3",
       "model_slug": "grok_43",
       "framework": "react",
       "run_id": "run_react_x-ai_grok-4.3_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_grok43_hard_v2/rb_hard_v2_react_grok43_flex_20260520_205350/hard_v2_react_grok43_flex_20260520_205350/run_react_x-ai_grok-4.3_run1"
+      "source_path": "paper_submit_data/raw_runs/grok_43/react/run1"
     },
     {
       "model": "Grok-4.3",
       "model_slug": "grok_43",
       "framework": "reflection",
       "run_id": "run_reflection_x-ai_grok-4.3_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_grok43_hard_v2/rb_hard_v2_reflection_grok43_flex_20260521_010337/hard_v2_reflection_grok43_flex_20260521_010337/run_reflection_x-ai_grok-4.3_run1"
+      "source_path": "paper_submit_data/raw_runs/grok_43/reflection/run1"
     },
     {
       "model": "Grok-4.3",
       "model_slug": "grok_43",
       "framework": "plan_and_act",
       "run_id": "run_plan_and_act_x-ai_grok-4.3_run1",
-      "source_path": "<EXTERNAL_LOG_ROOT>/batches_grok43_hard_v2/rb_hard_v2_plan_and_act_grok43_flex_20260521_010337/hard_v2_plan_and_act_grok43_flex_20260521_010337/run_plan_and_act_x-ai_grok-4.3_run1"
+      "source_path": "paper_submit_data/raw_runs/grok_43/plan_and_act/run1"
     },
     {
       "model": "GPT-5.5",
       "model_slug": "gpt_55",
       "framework": "react",
       "run_id": "run_react_gpt55_hard_v2_20260521_110407",
-      "source_path": "<EXTERNAL_LOG_ROOT>/openai_gpt55_react/run_react_gpt55_hard_v2_20260521_110407"
+      "source_path": "paper_submit_data/raw_runs/gpt_55/react/run1"
     },
     {
       "model": "Non-LLM Heuristic",
