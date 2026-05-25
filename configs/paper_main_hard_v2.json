@@ -1,0 +1,25 @@
+{
+  "config_name": "hard_v2",
+  "environment": "single-store supermarket operation",
+  "store_id": "15",
+  "evaluation_horizon_days": 180,
+  "product_count": 96,
+  "category_count": 20,
+  "candidate_suppliers_per_product": 5,
+  "initial_funds": 30000,
+  "daily_rent": 600,
+  "inventory_capacity": 15000,
+  "shelf_sku_capacity": 40,
+  "enable_review": true,
+  "review_ratio": 0.05,
+  "enable_news": true,
+  "news_daily_count": 20,
+  "news_impact_base_scale": 0.8,
+  "news_impact_abs_cap": 0.5,
+  "category_attraction_aggregation": "power",
+  "category_attraction_rho": 3.0,
+  "global_random_seed": 42,
+  "selection_rule": "survival_first_then_final_net_worth_then_total_sales",
+  "oracle_role": "privileged_reference_policy"
+}
+

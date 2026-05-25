@@ -1,0 +1,26 @@
+# Local runtime outputs
+logs/
+model_run_time/
+order_records/
+temp/
+*.log
+*.db
+*.sqlite
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environments
+.venv/
+venv/
+
+# OS/editor
+.DS_Store
+._*
+.vscode/
+.idea/
+
